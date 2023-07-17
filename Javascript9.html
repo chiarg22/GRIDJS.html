@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        /* margin: 0; */
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        flex: wrap;
+      }
+      /* .names {
+        width: 100px;
+      /* } */
+      /* .ptag {
+        width: 400px;
+      } */
+      .names {
+        display: flex;
+        justify-content: space-between;
+        flex: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="names"></div>
+  </body>
+</html>
+
+<script>
+  const namesElem = document.getElementById("names"); //     <div id="names"></div> // It is an empty div having no value like empty means empty
+  const namesList = [
+    10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100,
+    105,
+  ];
+
+  for (let i = 0; i < namesList.length; i++) {
+    const pTag = document.createElement("div"); // <p></p> {DOM Obj}
+    pTag.innerText = namesList[i];
+    pTag.className = "pTag"; // <p>Romesh</p>
+    if (namesList[i] % 2 == 0) {
+      pTag.style.backgroundColor = "red";
+      pTag.style.width = "400px";
+      pTag.style.height = "400px";
+    } else {
+      pTag.style.backgroundColor = "blue";
+      pTag.style.width = "400px";
+      pTag.style.height = "400px";
+    }
+
+    namesElem.appendChild(pTag); // hence p tags will be created under div   <div>
+    //<p></p>
+    //<p></p>
+    //<p></p>
+    //<p></p>
+    //<p></p>
+    //</div>
+  }
+</script>
